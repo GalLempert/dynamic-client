@@ -1,0 +1,16 @@
+<div class="p-4">
+  <h1 class="text-2xl font-bold mb-4">Admin Configuration</h1>
+  <div *ngFor="let res of resources" class="border p-4 mb-4 rounded shadow">
+    <h3 class="text-xl font-semibold">{{ res.name }}</h3>
+    <label class="block mt-2">
+      <span class="text-gray-700">Default Search Field:</span>
+      <select [ngModel]="schemaService.getDefaultSearchField(res.name)"
+              (ngModelChange)="updateDefaultSearchField(res.name, $event)"
+              class="ml-2 border rounded p-1">
+        <option *ngFor="let field of getFields(res)" [value]="field">
+          {{ field }}
+        </option>
+      </select>
+    </label>
+  </div>
+</div>

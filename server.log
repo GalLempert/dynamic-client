@@ -1,0 +1,82 @@
+
+> dynamic-client@0.0.0 start
+> ng serve --port 4200 --host 0.0.0.0
+
+
+Warning: This is a simple server for use in testing or debugging Angular applications
+locally. It hasn't been reviewed for security issues.
+
+Binding this server to an open connection can result in compromising your application or
+computer. Using a different host than the one passed to the "--host" flag might result in
+websocket connection issues.
+
+❯ Building...
+✔ Building...
+Initial chunk files | Names         |  Raw size
+main.js             | main          | 109.85 kB |
+styles.css          | styles        |  13.15 kB |
+
+                    | Initial total | 123.00 kB
+
+Application bundle generation complete. [2.886 seconds] - 2026-02-05T16:43:10.030Z
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  ➜  Local:   http://localhost:4200/
+  ➜  Network: http://192.168.0.2:4200/
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 64.38 kB |
+
+Application bundle generation complete. [0.582 seconds] - 2026-02-05T16:46:35.165Z
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 64.42 kB |
+
+Application bundle generation complete. [0.197 seconds] - 2026-02-05T16:47:40.529Z
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 64.49 kB |
+
+Application bundle generation complete. [0.209 seconds] - 2026-02-05T16:48:33.645Z
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 64.55 kB |
+
+Application bundle generation complete. [0.172 seconds] - 2026-02-05T16:49:50.140Z
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 64.63 kB |
+
+Application bundle generation complete. [0.238 seconds] - 2026-02-05T16:49:56.450Z
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 64.47 kB |
+
+Application bundle generation complete. [0.299 seconds] - 2026-02-05T16:50:59.492Z
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names  | Raw size
+styles.css          | styles | 15.76 kB |
+
+Application bundle generation complete. [0.025 seconds] - 2026-02-05T16:53:09.141Z
+
+Stylesheet update sent to client(s).

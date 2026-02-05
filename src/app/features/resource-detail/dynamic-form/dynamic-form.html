@@ -1,0 +1,38 @@
+<div class="space-y-4">
+  <div *ngFor="let field of fields">
+    <!-- Handle Primitives -->
+    <ng-container *ngIf="isPrimitive(field)">
+      <label class="block font-semibold text-gray-700 capitalize">{{ field }}</label>
+
+      <!-- Read Mode -->
+      <div *ngIf="!isEditing" class="text-gray-900 p-2 border border-transparent min-h-[2.5rem] flex items-center">
+        {{ data[field] }}
+      </div>
+
+      <!-- Edit Mode -->
+      <div *ngIf="isEditing" [formGroup]="form">
+         <!-- Boolean -->
+         <input *ngIf="isBoolean(field)"
+                type="checkbox"
+                [formControlName]="field"
+                [attr.disabled]="schema.properties[field].readOnly ? true : null"
+                class="ml-1 h-5 w-5 text-blue-600 rounded">
+
+         <!-- Number/Text -->
+         <input *ngIf="!isBoolean(field)"
+                [type]="getFieldType(field)"
+                [formControlName]="field"
+                [attr.disabled]="schema.properties[field].readOnly ? true : null"
+                class="border rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100 disabled:text-gray-500">
+      </div>
+    </ng-container>
+
+    <!-- Handle Objects (ReadOnly View Only) -->
+    <ng-container *ngIf="!isPrimitive(field)">
+        <label class="block font-semibold text-gray-700 capitalize">{{ field }}</label>
+        <div class="text-gray-500 text-sm p-2 bg-gray-50 rounded">
+            Complex Object (displayed in specialized view if available)
+        </div>
+    </ng-container>
+  </div>
+</div>

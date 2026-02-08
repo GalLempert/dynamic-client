@@ -1,46 +1,51 @@
-<div class="h-screen flex flex-col">
+<div class="h-screen flex flex-col bg-gray-50">
+
   <!-- Top Bar -->
-  <div class="bg-gray-800 text-white p-2 flex justify-between items-center h-14 shadow-md px-4">
+  <header class="bg-gray-800 text-white p-3 flex justify-between items-center shadow-md">
     <div class="flex items-center gap-4">
-        <a routerLink="/" class="font-bold text-lg hover:text-gray-300">{{ appName }}</a>
+        <a routerLink="/" class="text-xl font-bold hover:text-gray-300 transition">DynamicClient</a>
         <span class="text-xs bg-gray-700 px-2 py-0.5 rounded border border-gray-600">{{ env }}</span>
-        <span class="font-mono text-gray-300">|</span>
-        <span class="font-semibold">{{ resourceType }}</span>
-        <span class="text-gray-400">/</span>
-        <span>{{ data?.name || data?.storeName || id }}</span>
+        <span class="text-gray-400">|</span>
+        <span class="font-semibold text-gray-300">{{ resourceType }}</span>
+        <span class="text-gray-500">/</span>
+        <span class="font-bold">{{ data?.name || data?.storeName || id }}</span>
     </div>
 
-    <div>
-        <!-- Placeholder for small search -->
-        <input placeholder="Jump to..." class="text-black text-sm p-1 rounded w-64">
+    <div class="flex-grow max-w-md mx-4">
+        <input placeholder="Jump to resource..." class="input bg-gray-700 text-white border-gray-600 focus:bg-gray-600 placeholder-gray-400">
     </div>
 
     <div class="flex gap-2">
-         <button *ngIf="!isEditing" (click)="toggleEdit()" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-sm transition">Edit</button>
-         <button *ngIf="!isEditing" (click)="deleteResource()" class="bg-red-600 hover:bg-red-700 px-3 py-1 rounded text-sm transition">Delete</button>
+         <button *ngIf="!isEditing" (click)="toggleEdit()" class="btn btn-primary">Edit</button>
+         <button *ngIf="!isEditing" (click)="deleteResource()" class="btn btn-danger">Delete</button>
 
-         <button *ngIf="isEditing" (click)="triggerSave()" class="bg-green-600 hover:bg-green-700 px-3 py-1 rounded text-sm transition">Save</button>
-         <button *ngIf="isEditing" (click)="cancel()" class="bg-gray-600 hover:bg-gray-700 px-3 py-1 rounded text-sm transition">Cancel</button>
+         <button *ngIf="isEditing" (click)="triggerSave()" class="btn btn-success">Save</button>
+         <button *ngIf="isEditing" (click)="cancel()" class="btn btn-secondary">Cancel</button>
     </div>
-  </div>
+  </header>
 
   <!-- Content Split -->
-  <div class="flex-grow flex overflow-hidden">
+  <main class="flex-grow flex overflow-hidden">
     <!-- Left: Map -->
-    <div class="w-1/2 relative border-r bg-gray-100">
+    <div class="w-1/2 relative border-r border-gray-200">
         <app-map *ngIf="data" [location]="data.location" [name]="data.name || data.storeName"></app-map>
-        <div *ngIf="!data" class="h-full flex items-center justify-center">Loading map...</div>
+        <div *ngIf="!data" class="h-full flex items-center justify-center text-gray-400">Loading map...</div>
     </div>
 
     <!-- Right: Form -->
-    <div class="w-1/2 overflow-auto p-6 bg-white">
-        <app-dynamic-form *ngIf="data && resourceDef"
-            [schema]="resourceDef.schema"
-            [data]="data"
-            [isEditing]="isEditing"
-            (save)="onSaveData($event)">
-        </app-dynamic-form>
+    <div class="w-1/2 overflow-auto bg-white p-8">
+        <div *ngIf="data && resourceDef" class="max-w-xl mx-auto">
+            <h2 class="text-2xl mb-6 border-b pb-2 text-gray-800">
+                {{ isEditing ? 'Edit Resource' : 'Resource Details' }}
+            </h2>
+            <app-dynamic-form
+                [schema]="resourceDef.schema"
+                [data]="data"
+                [isEditing]="isEditing"
+                (save)="onSaveData($event)">
+            </app-dynamic-form>
+        </div>
         <div *ngIf="!data" class="text-center mt-10 text-gray-500">Loading details...</div>
     </div>
-  </div>
+  </main>
 </div>

@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { SchemaService, ResourceDefinition } from '../../core/services/schema';
+import { SchemaService } from '../../core/services/schema';
 import { ApiService } from '../../core/services/api';
+import { ResourceDefinition } from '../../core/models/resource';
 
 @Component({
   selector: 'app-search',

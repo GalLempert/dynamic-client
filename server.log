@@ -80,3 +80,243 @@ styles.css          | styles | 15.76 kB |
 Application bundle generation complete. [0.025 seconds] - 2026-02-05T16:53:09.141Z
 
 Stylesheet update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 64.69 kB |
+
+Application bundle generation complete. [2.381 seconds] - 2026-02-08T14:02:21.939Z
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names  | Raw size
+styles.css          | styles | 16.54 kB |
+
+Application bundle generation complete. [0.064 seconds] - 2026-02-08T14:02:58.302Z
+
+Stylesheet update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 67.93 kB |
+
+Application bundle generation complete. [0.980 seconds] - 2026-02-08T14:03:09.290Z
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 67.93 kB |
+
+Application bundle generation complete. [0.634 seconds] - 2026-02-08T14:03:16.116Z
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 67.99 kB |
+
+Application bundle generation complete. [0.355 seconds] - 2026-02-08T14:03:24.609Z
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 66.75 kB |
+
+Application bundle generation complete. [0.622 seconds] - 2026-02-08T14:03:31.334Z
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.448 seconds] - 2026-02-08T14:04:11.524Z
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-notification' is not a known element:
+1. If 'app-notification' is an Angular component, then verify that it is included in the '@Component.imports' of this component.
+2. If 'app-notification' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@Component.schemas' of this component to suppress this message.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:0:0:
+[37m      0 │ [32m[37m
+        ╵ [32m^[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:7:15:
+[37m      7 │   templateUrl: [32m'./app.html'[37m,
+        ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '@angular/animations' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/core/components/notification/notification.ts:4:52:
+[37m      4 │ ...{ trigger, transition, style, animate } from [32m'@angular/animations'[37m;
+        ╵                                                 [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.207 seconds] - 2026-02-08T14:04:15.889Z
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '@angular/animations' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/core/components/notification/notification.ts:4:52:
+[37m      4 │ ...{ trigger, transition, style, animate } from [32m'@angular/animations'[37m;
+        ╵                                                 [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.048 seconds] - 2026-02-08T14:04:20.618Z
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '@angular/animations' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/core/components/notification/notification.ts:4:52:
+[37m      4 │ ...{ trigger, transition, style, animate } from [32m'@angular/animations'[37m;
+        ╵                                                 [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.825 seconds] - 2026-02-08T14:04:32.047Z
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../core/services/notification' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/core/components/notification/notification.ts:3:36:
+[37m      3 │ ...rt { NotificationService } from [32m'../../core/services/notification'[37m;
+        ╵                                    [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '@angular/animations' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/core/components/notification/notification.ts:4:52:
+[37m      4 │ ...{ trigger, transition, style, animate } from [32m'@angular/animations'[37m;
+        ╵                                                 [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG2003: No suitable injection token for parameter 'notificationService' of class 'NotificationComponent'.
+  Consider using the @Inject decorator to specify an injection token.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/core/components/notification/notification.ts:34:22:
+[37m      34 │   constructor(private [32mnotificationService[37m: NotificationService) {}
+         ╵                       [32m~~~~~~~~~~~~~~~~~~~[0m
+
+  This type does not have a value, so it cannot be used as injection token.
+
+    src/app/core/components/notification/notification.ts:34:43:
+[37m      34 │   constructor(private notificationService: [32mNotificationService[37m) {}
+         ╵                                            [32m~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'n' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/core/components/notification/notification.ts:37:54:
+[37m      37 │     this.notificationService.notifications$.subscribe([32mn[37m => {
+         ╵                                                       [32m^[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.274 seconds] - 2026-02-08T14:04:35.707Z
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../core/services/notification' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/core/components/notification/notification.ts:3:36:
+[37m      3 │ ...rt { NotificationService } from [32m'../../core/services/notification'[37m;
+        ╵                                    [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '@angular/animations' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/core/components/notification/notification.ts:4:52:
+[37m      4 │ ...{ trigger, transition, style, animate } from [32m'@angular/animations'[37m;
+        ╵                                                 [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG2003: No suitable injection token for parameter 'notificationService' of class 'NotificationComponent'.
+  Consider using the @Inject decorator to specify an injection token.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/core/components/notification/notification.ts:34:22:
+[37m      34 │   constructor(private [32mnotificationService[37m: NotificationService) {}
+         ╵                       [32m~~~~~~~~~~~~~~~~~~~[0m
+
+  This type does not have a value, so it cannot be used as injection token.
+
+    src/app/core/components/notification/notification.ts:34:43:
+[37m      34 │   constructor(private notificationService: [32mNotificationService[37m) {}
+         ╵                                            [32m~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'n' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/core/components/notification/notification.ts:37:54:
+[37m      37 │     this.notificationService.notifications$.subscribe([32mn[37m => {
+         ╵                                                       [32m^[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.045 seconds] - 2026-02-08T14:04:55.571Z
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../core/services/notification' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/core/components/notification/notification.ts:3:36:
+[37m      3 │ ...rt { NotificationService } from [32m'../../core/services/notification'[37m;
+        ╵                                    [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '@angular/animations' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/core/components/notification/notification.ts:4:52:
+[37m      4 │ ...{ trigger, transition, style, animate } from [32m'@angular/animations'[37m;
+        ╵                                                 [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG2003: No suitable injection token for parameter 'notificationService' of class 'NotificationComponent'.
+  Consider using the @Inject decorator to specify an injection token.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/core/components/notification/notification.ts:34:22:
+[37m      34 │   constructor(private [32mnotificationService[37m: NotificationService) {}
+         ╵                       [32m~~~~~~~~~~~~~~~~~~~[0m
+
+  This type does not have a value, so it cannot be used as injection token.
+
+    src/app/core/components/notification/notification.ts:34:43:
+[37m      34 │   constructor(private notificationService: [32mNotificationService[37m) {}
+         ╵                                            [32m~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'n' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/core/components/notification/notification.ts:37:54:
+[37m      37 │     this.notificationService.notifications$.subscribe([32mn[37m => {
+         ╵                                                       [32m^[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names         | Raw size
+main.js             | main          | 73.40 kB |
+styles.css          | styles        | 18.02 kB |
+
+                    | Initial total | 91.41 kB
+
+Application bundle generation complete. [0.845 seconds] - 2026-02-08T14:08:33.994Z
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 73.31 kB |
+
+Application bundle generation complete. [0.416 seconds] - 2026-02-08T14:11:02.250Z
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 74.11 kB |
+
+Application bundle generation complete. [0.381 seconds] - 2026-02-08T14:11:09.995Z
+
+Component update sent to client(s).

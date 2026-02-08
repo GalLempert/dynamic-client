@@ -1,38 +1,36 @@
-<div class="space-y-4">
-  <div *ngFor="let field of fields">
-    <!-- Handle Primitives -->
-    <ng-container *ngIf="isPrimitive(field)">
-      <label class="block font-semibold text-gray-700 capitalize">{{ field }}</label>
+<form [formGroup]="form" class="space-y-4">
+  <div *ngFor="let field of fields" class="mb-4">
+    <label class="block text-gray-700 font-semibold mb-1 capitalize">{{ field }}</label>
 
-      <!-- Read Mode -->
-      <div *ngIf="!isEditing" class="text-gray-900 p-2 border border-transparent min-h-[2.5rem] flex items-center">
-        {{ data[field] }}
-      </div>
+    <!-- Read Mode -->
+    <div *ngIf="!isEditing" class="p-2 bg-gray-50 border border-gray-200 rounded text-gray-800">
+      {{ isPrimitive(field) ? data[field] : '[Complex Object]' }}
+    </div>
 
-      <!-- Edit Mode -->
-      <div *ngIf="isEditing" [formGroup]="form">
-         <!-- Boolean -->
-         <input *ngIf="isBoolean(field)"
-                type="checkbox"
-                [formControlName]="field"
-                [attr.disabled]="schema.properties[field].readOnly ? true : null"
-                class="ml-1 h-5 w-5 text-blue-600 rounded">
+    <!-- Edit Mode -->
+    <div *ngIf="isEditing && isPrimitive(field)">
+       <!-- Boolean -->
+       <div *ngIf="isBoolean(field)" class="flex items-center">
+         <input type="checkbox"
+              [formControlName]="field"
+              [attr.disabled]="schema.properties[field].readOnly ? true : null"
+              class="h-5 w-5 text-blue-600 rounded border-gray-300">
+         <span class="ml-2 text-sm text-gray-600">Enabled</span>
+       </div>
 
-         <!-- Number/Text -->
-         <input *ngIf="!isBoolean(field)"
-                [type]="getFieldType(field)"
-                [formControlName]="field"
-                [attr.disabled]="schema.properties[field].readOnly ? true : null"
-                class="border rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100 disabled:text-gray-500">
-      </div>
-    </ng-container>
+       <!-- Number/Text -->
+       <input *ngIf="!isBoolean(field)"
+              [type]="getFieldType(field)"
+              [formControlName]="field"
+              [attr.disabled]="schema.properties[field].readOnly ? true : null"
+              class="input focus:ring-2 focus:ring-blue-500"
+              [class.bg-gray-100]="schema.properties[field].readOnly">
 
-    <!-- Handle Objects (ReadOnly View Only) -->
-    <ng-container *ngIf="!isPrimitive(field)">
-        <label class="block font-semibold text-gray-700 capitalize">{{ field }}</label>
-        <div class="text-gray-500 text-sm p-2 bg-gray-50 rounded">
-            Complex Object (displayed in specialized view if available)
-        </div>
-    </ng-container>
+       <p *ngIf="schema.properties[field].readOnly" class="text-xs text-gray-500 mt-1">Read-only field</p>
+    </div>
+
+    <div *ngIf="isEditing && !isPrimitive(field)" class="text-gray-400 italic text-sm">
+        Complex objects cannot be edited in this view.
+    </div>
   </div>
-</div>
+</form>

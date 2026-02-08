@@ -42,13 +42,8 @@ export class DynamicFormComponent implements OnInit, OnChanges {
     this.fields.forEach(field => {
       const fieldSchema = this.schema.properties[field];
       // Only handle primitives for editing in this demo
-      if (fieldSchema.type !== 'object' && fieldSchema.type !== 'array') {
+      if (this.isPrimitive(field)) {
          group[field] = [this.data[field] !== undefined ? this.data[field] : ''];
-
-         // Disable if readOnly
-         if (fieldSchema.readOnly) {
-            // We can handle this in template or disable control
-         }
       }
     });
 

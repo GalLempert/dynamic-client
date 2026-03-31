@@ -35,13 +35,14 @@ export const mockBackendInterceptor: HttpInterceptorFn = (req, next) => {
       const field = variables.field || 'name';
 
       let results: any[] = [];
+      const lowerTerm = term.toLowerCase();
       if (resourceType === 'User') {
         results = currentUsers.filter(u =>
-          (u as any)[field]?.toString().toLowerCase().includes(term.toLowerCase())
+          (u as any)[field]?.toString().toLowerCase().includes(lowerTerm)
         );
       } else if (resourceType === 'Store') {
         results = currentStores.filter(s =>
-          (s as any)[field]?.toString().toLowerCase().includes(term.toLowerCase())
+          (s as any)[field]?.toString().toLowerCase().includes(lowerTerm)
         );
       }
 

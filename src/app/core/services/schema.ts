@@ -35,7 +35,8 @@ export class SchemaService {
         if (!this.defaultSearchFields.has(res.name)) {
           // Heuristic: try to find 'name' or 'title' or take the first string property
            const props = res.schema.properties || {};
-           const candidate = Object.keys(props).find(k => k.toLowerCase().includes('name')) || Object.keys(props)[0];
+           const keys = Object.keys(props);
+           const candidate = keys.find(k => k.toLowerCase().includes('name')) || keys[0];
            this.defaultSearchFields.set(res.name, candidate || 'id');
         }
       });
